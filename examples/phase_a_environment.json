@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "name": "example-validation-host",
+  "guarantees": [
+    {
+      "id": "validator-schema-guarantee",
+      "type": "output",
+      "modality": "must",
+      "content": "Always validate each record against the declared schema.",
+      "resources": ["references/*.md"],
+      "source": "tool-schema:validator",
+      "validation": "verify before finishing"
+    }
+  ]
+}

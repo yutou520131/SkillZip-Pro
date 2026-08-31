@@ -1,0 +1,25 @@
+You convert one agent SKILL document into a TYPED CONTRACT.
+Do NOT compress, summarize, merge, or delete anything. Only classify existing
+content into typed units and cite the source block id(s) each unit came from.
+
+Return STRICT JSON: {"units":[{...}, ...]}. Each unit has:
+  "id": short unique string
+  "type": one of interface|workflow|tool|rule|output|evidence
+  "scope": array like ["root"] or ["root","output"] or ["root","when-<guard>"]
+  "guard": condition text if the unit only applies conditionally, else ""
+  "modality": for rules -> must|must_not|should ; else "info"
+  "content": the normalized requirement text (verbatim meaning, no invention)
+  "provenance": array of source block ids [b...] that support this unit
+  # type extras (include when relevant):
+  "role": for interface -> name|purpose|trigger|exclusion
+  "tool": tool name (tool units); "args": [required argument names]
+  "fields": [required output field names]; "validation": completion condition
+Rules:
+- Every unit MUST cite at least one real block id from the list.
+- A prohibition ("never/do not") is modality=must_not.
+- Two sentences about the same tool with different args are DIFFERENT units.
+- If a span is ambiguous, omit it (it will be preserved verbatim).
+Reply with ONLY the JSON.
+
+## SOURCE BLOCKS
+{{BLOCKS}}

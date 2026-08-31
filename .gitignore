@@ -1,0 +1,25 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# SkillZip runtime artifacts (never commit caches or generated state)
+.skillzip_cache/
+.skillzip_view_cache/
+*.state.json
+*.compact.md
+
+# Editor / OS noise
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

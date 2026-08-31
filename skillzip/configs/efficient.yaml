@@ -1,0 +1,14 @@
+# SkillZip efficient configuration (paper Appendix B.1): deterministic only.
+# No model calls -- uses the deterministic parser and relation classifier, for
+# fast/offline compression and reproducible CI. Lower fidelity than the
+# schema-constrained model extraction but still coverage-safe (locked residual).
+extract_llm: false
+audit_llm: false
+audit: true
+top_k: 4
+min_sim: 0.30
+min_conf: 0.60
+wf_min_len: 2
+wf_min_occ: 2
+repack_every: 4
+repack_growth: 0.5

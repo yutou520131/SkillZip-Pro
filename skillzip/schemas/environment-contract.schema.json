@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://skillzip.dev/schemas/environment-contract.schema.json",
+  "title": "SkillZip Phase-A Environment Contract",
+  "type": "object",
+  "required": ["version", "guarantees"],
+  "properties": {
+    "version": {"const": 1},
+    "name": {"type": "string"},
+    "guarantees": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "content"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "type": {
+            "enum": ["interface", "workflow", "tool", "rule", "output"]
+          },
+          "content": {"type": "string", "minLength": 1},
+          "modality": {
+            "enum": ["must", "must_not", "should", "info"],
+            "default": "info"
+          },
+          "guard": {"type": "string", "default": ""},
+          "resources": {
+            "oneOf": [
+              {"type": "string"},
+              {"type": "array", "items": {"type": "string"}}
+            ]
+          },
+          "source": {"type": "string"},
+          "tool": {"type": "string"},
+          "args": {"type": "array", "items": {"type": "string"}},
+          "fields": {"type": "array", "items": {"type": "string"}},
+          "validation": {"type": "string"},
+          "allow_workflow": {"type": "boolean", "default": false}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

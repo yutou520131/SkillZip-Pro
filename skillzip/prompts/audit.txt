@@ -1,0 +1,6 @@
+Parse this compressed SKILL into a typed contract for auditing.
+Return STRICT JSON {"units":[...]} using the same schema as extraction. Do not
+compress. Reply with ONLY the JSON.
+
+## COMPRESSED SKILL
+{{SKILL}}

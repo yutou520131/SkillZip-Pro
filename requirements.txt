@@ -1,0 +1,6 @@
+# Core SkillZip (deterministic path) requires no third-party packages.
+#
+# `requests` is needed ONLY for the optional model-assisted stages -- contract
+# extraction, relation checking, and the structural audit -- which call an
+# OpenAI-compatible endpoint. Run with `--no-llm` to stay dependency-free.
+requests>=2.28

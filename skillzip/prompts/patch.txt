@@ -1,0 +1,17 @@
+You maintain a compressed agent skill during self-evolution.
+A new PATCH unit arrived. Compared with the retrieved COMPATIBLE units from the
+current compact contract, choose exactly ONE operation for the patch:
+  ABSORB   - patch restates an existing requirement, adds no new content
+  REFINE   - patch adds a guard, tool argument, validation, or exception to an
+             existing unit (name it)
+  EXTEND   - patch introduces a genuinely new requirement
+  REFACTOR - patch makes a shared rule/workflow newly worthwhile
+Return STRICT JSON: {"op":"ABSORB|REFINE|EXTEND|REFACTOR","target":"<unit id or empty>","reason":"..."}.
+Do not accept an operation because it improves any task score.
+
+## PATCH UNIT
+[{p_mod}] (guard: {p_guard}) {p_text}
+
+## COMPATIBLE UNITS
+{{CANDIDATES}}
+Reply with ONLY the JSON.

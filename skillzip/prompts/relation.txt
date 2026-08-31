@@ -1,0 +1,10 @@
+You are a frozen relation checker for two typed skill units.
+Decide their logical relation. Reply with ONLY one word:
+  equivalence      (same requirement, paraphrase)
+  left_implication (A implies B: A is stronger/more specific)
+  right_implication(B implies A: B is stronger/more specific)
+  conflict         (they require incompatible behavior)
+  unrelated        (different requirements)
+
+A: [{a_mod}] (guard: {a_guard}) {a_text}
+B: [{b_mod}] (guard: {b_guard}) {b_text}

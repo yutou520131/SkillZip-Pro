@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SkillZip typed contract sidecar (skillzip.json)",
+  "type": "object",
+  "required": ["name", "library"],
+  "properties": {
+    "name": {"type": "string"},
+    "library": {
+      "type": "object",
+      "properties": {
+        "units": {"type": "array", "items": {"$ref": "#/definitions/unit"}},
+        "procedures": {"type": "array", "items": {"$ref": "#/definitions/procedure"}},
+        "residual": {"type": "array", "items": {"$ref": "#/definitions/unit"}}
+      }
+    },
+    "rule_family_counts": {"type": "object"},
+    "ngram_counts": {"type": "object"},
+    "patches_since_repack": {"type": "integer"},
+    "units_at_last_repack": {"type": "integer"},
+    "log": {"type": "array"}
+  },
+  "definitions": {
+    "unit": {
+      "type": "object",
+      "required": ["id", "type", "scope", "content"],
+      "properties": {
+        "id": {"type": "string"},
+        "type": {"enum": ["interface", "workflow", "tool", "rule", "output", "evidence"]},
+        "scope": {"type": "array", "items": {"type": "string"}},
+        "content": {"type": "string"},
+        "modality": {"enum": ["must", "must_not", "should", "info"]},
+        "guard": {"type": "string"},
+        "provenance": {"type": "array", "items": {"type": "string"}},
+        "role": {"type": "string"},
+        "edges_in": {"type": "array", "items": {"type": "string"}},
+        "edges_out": {"type": "array", "items": {"type": "string"}},
+        "tool": {"type": "string"},
+        "args": {"type": "array", "items": {"type": "string"}},
+        "fields": {"type": "array", "items": {"type": "string"}},
+        "validation": {"type": "string"},
+        "order": {"type": "integer"},
+        "locked": {"type": "boolean"},
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {"guard": {"type": "string"}, "content": {"type": "string"}}
+          }
+        }
+      }
+    },
+    "procedure": {
+      "type": "object",
+      "required": ["name", "steps"],
+      "properties": {
+        "name": {"type": "string"},
+        "steps": {"type": "array", "items": {"type": "string"}},
+        "unit_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

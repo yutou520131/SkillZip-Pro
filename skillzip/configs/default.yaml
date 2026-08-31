@@ -1,0 +1,12 @@
+# SkillZip default configuration (paper Appendix B.1, B.4).
+# lambda charges equal the actual token cost of template delimiters (not fitted).
+extract_llm: true        # schema-constrained model contract extraction
+audit_llm: true          # independent reparse during the structural audit
+audit: true              # run structural audit + conservative recovery
+top_k: 6                 # relation-retrieval breadth per unit
+min_sim: 0.12            # low lexical gate; the relation checker decides equivalence
+min_conf: 0.55           # minimum relation confidence to act on a candidate
+wf_min_len: 2            # minimum workflow fragment length for reuse
+wf_min_occ: 2            # minimum non-overlapping occurrences for reuse
+repack_every: 4          # Zip-on-Write: global repack after B patches
+repack_growth: 0.5       # or when the contract grows by > rho since last repack

@@ -1,0 +1,14 @@
+# Harness-compatible Phase-A bundle profile.
+extract_llm: true
+audit_llm: true
+audit: true
+canonicalize: true
+include_unreferenced: true
+strict_references: true
+normalize_nested_skills: true
+capsules: true
+capsule_min_tokens: 220
+capsule_min_sections: 2
+promote_cross_file: true
+promotion_min_tokens: 12
+deployment_weight: 0.05
