@@ -394,12 +394,14 @@ Lifecycle-specific settings are call arguments rather than config keys:
 > Skills for Self-Evolving Agents.**
 
 ```bibtex
-@article{skillzippro2026,
-  title   = {SkillZip Pro: Execution-Aware Dynamic Compression of Progressively
-             Loaded Skills for Self-Evolving Agents},
-  author  = {Bai, Xiaofan and Liu, Chao and Lin, Hongqiang and Song, Mingli and
-             Jin, Xuan and Cao, Xipeng and Li, Yuhong},
-  year    = {2026}
+@article{bai2026skillzipproexecutionawaredynamic,
+      title={SkillZip Pro: Execution-Aware Dynamic Compression of Progressively Loaded Skills for Self-Evolving Agents}, 
+      author={Xiaofan Bai and Chao Liu and Hongqiang Lin and Di Wu and Mingli Song and Xuan Jin and Xipeng Cao and Yuhong Li},
+      year={2026},
+      eprint={2608.30785},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2608.30785}, 
 }
 ```
 
